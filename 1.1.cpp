@@ -44,6 +44,10 @@ int main(int argc, char** argv) {
 	int k1, k2, method;
 	ostringstream buf;
 	char ch;
+	if (argc != 2) {
+		cout << "Usage: " << argv[0] << " file" << endl;
+		return 1;
+	}
 	ifstream inf(argv[1]);
 	while (buf && inf.get(ch)) buf.put(ch);
 	string s = buf.str();
